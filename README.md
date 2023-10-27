@@ -1,4 +1,5 @@
 <h2>program for forward traffic from bluestack to windows 10</h2>
+<img src="./adb.png">
 
 how to use:<br>
 step 1:download <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">AdbConnector.zip</a><br>
