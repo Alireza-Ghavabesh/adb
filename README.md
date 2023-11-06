@@ -1,12 +1,26 @@
 <h2>program for forward traffic from bluestack to windows 10</h2>
 <img src="./adb.png">
 
-how to use:<br>
-step 1:download <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">AdbConnector.zip</a><br>
-step 2:extract it and copy AdbConnector.exe to this path:<br>
+<h1>how to use :</h1><br>
+<h3>step 1 :</h3> 
+Download this two files <br>
+1. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">AdbConnector.zip</a><br>
+2. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">adb-setup-1.4.3.zip</a><br>
+<h3>step 2 :</h3>
+-> extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp<br>
-step 3:now after restart windows, you can use proxy in windows from bluestack with everyproxy apk<br>
-step 4: you can use windows proxy setting or apps like nekoray or any app that support proxy<br>
-important note:<br>
-for http : port 63254<br>
-for socks: port 63255<br>
+
+-> extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
+
+<h3>step 3 :</h3>
+-> install <b>EveryProxy android app</b> into <b>bluestack</b><br>
+-> in everyproxy go to settings and change <b>IP Address</b> to 0.0.0.0 <br>
+-> in everyproxy settings, for HTTP change port to <b>63254</b> <br>
+-> in everyproxy settings, for SOCKS change port to <b>63255</b> <br>
+<h3>step 4 :</h3>
+Now in windows 10 go to <b>proxy settings</b> and use use proxy:
+IP Address: 127.0.0.1
+Port: 63254
+
+
+Enjoy!
