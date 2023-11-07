@@ -1,4 +1,5 @@
 
+
 <h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 
@@ -12,13 +13,14 @@ Download this two files <br>
 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp<br>
 
 → extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
-
-<h3>step 3 :</h3>
+<h3>step 3:</h3>
+→ <b>Restart PC</b>
+<h3>step 4:</h3>
 → install <b>EveryProxy android app</b> into <b>bluestack</b><br>
 → in everyproxy go to settings and change <b>IP Address</b> to 0.0.0.0 <br>
 → in everyproxy settings, for HTTP change port to <b>63254</b> <br>
 → in everyproxy settings, for SOCKS change port to <b>63255</b> <br>
-<h3>step 4 :</h3>
+<h3>step 5 :</h3>
 → Enable http proxy in everyproxy app and Now in windows 10 go to <b>proxy settings</b> and use proxy: <br>
 IP Address: 127.0.0.1 <br>
 Port: 63254 <br>
