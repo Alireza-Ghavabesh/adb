@@ -18,7 +18,7 @@ C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp<br>
 -> in everyproxy settings, for HTTP change port to <b>63254</b> <br>
 -> in everyproxy settings, for SOCKS change port to <b>63255</b> <br>
 <h3>step 4 :</h3>
-Now in windows 10 go to <b>proxy settings</b> and use proxy: <br>
+Enable http proxy in everyproxy app and Now in windows 10 go to <b>proxy settings</b> and use proxy: <br>
 IP Address: 127.0.0.1 <br>
 Port: 63254 <br>
 <br><br>
