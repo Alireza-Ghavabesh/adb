@@ -23,4 +23,6 @@ IP Address: 127.0.0.1 <br>
 Port: 63254 <br>
 <br><br>
 
+if you have apps like Nekoray or any app that support socks proxy you can use <b>127.0.0.1:63255</b> <br>
+
 Enjoy!
