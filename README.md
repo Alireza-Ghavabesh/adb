@@ -1,4 +1,4 @@
-<h2>program for forward traffic from bluestack to windows 10</h2>
+<h2>Program for forward traffic from bluestack to windows 10, use android VPN in Windows 10</h2>
 <img src="./adb.png">
 
 <h1>how to use :</h1><br>
