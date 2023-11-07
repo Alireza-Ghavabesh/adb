@@ -1,5 +1,5 @@
 
-<h2>⭐use android VPN in Windows 10!⭐</h2>
+<h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 
 <h1>how to use :</h1><br>
