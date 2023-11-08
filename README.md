@@ -1,6 +1,3 @@
-
-
-
 <h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 
@@ -13,7 +10,8 @@ Download this two files <br>
 <b>→</b> extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
 <b>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</b> <br><br>
 
-<b>→</b> extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
+<b>→</b> extract <b>adb-setup-1.4.3.zip</b> and install <b>adb-setup-1.4.3.exe</b>
+
 <h3>step 3:</h3>
 → <b>Restart PC</b>
 <h3>step 4:</h3>
@@ -21,6 +19,7 @@ Download this two files <br>
 → in everyproxy go to settings and change <b>IP Address</b> to 0.0.0.0 <br>
 → in everyproxy settings, for HTTP change port to <b>63254</b> <br>
 → in everyproxy settings, for SOCKS change port to <b>63255</b> <br>
+<img src="step4.gif" alt="step4" style="width:900px;height:647px;">
 <h3>step 5 :</h3>
 → Enable http proxy in everyproxy app and Now in windows 10 go to <b>proxy settings</b> and use proxy: <br>
 IP Address: 127.0.0.1 <br>
@@ -33,11 +32,10 @@ if you have apps like Nekoray or any app that support socks proxy, you can use <
 
 only if you want use nekoray Tun mode (VPN mode), you have to do this :<br>
 
-<b>→</b> in Nekoray app go to tab <b>Preferences</b> -> <b>Tun settings</b> -> in <b>Bypass Process Name</b> window,  put this two line and press ok : <br>
+<b>→</b> in Nekoray app go to tab <b>Preferences</b> -> <b>Tun settings</b> -> in <b>Bypass Process Name</b> window, put this two line and press ok : <br>
 HD-Player.exe<br>
 AdbConnector.exe<br>
 
-⭐ This will prevent from  connection loop between windows and bluestack!
-
+⭐ This will prevent from connection loop between windows and bluestack!
 
 <h1>Enjoy!</h1>
