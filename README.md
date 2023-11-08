@@ -31,13 +31,13 @@ if you have apps like Nekoray or any app that support socks proxy, you can use <
 
 <h1>⚠ Important note: </h1>
 
-if you want use nekoray Tun mode (VPN mode), you have to do this :<br>
+only if you want use nekoray Tun mode (VPN mode), you have to do this :<br>
 
 <b>→</b> in Nekoray app go to tab <b>Preferences</b> -> <b>Tun settings</b> -> in <b>Bypass Process Name</b> window,  put this two line and press ok : <br>
 HD-Player.exe<br>
 AdbConnector.exe<br>
 
-
+⭐ This will prevent from  connection loop between windows and bluestack!
 
 
 <h1>Enjoy!</h1>
