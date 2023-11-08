@@ -1,7 +1,8 @@
 <h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 
-[!watch](https://github.com/Alireza-Ghavabesh/adb/blob/main/AdbConnector.mp4)
+usage
+<img src="adbC.gif" alt="adbC">
 
 <h1>how to use :</h1><br>
 <h3>step 1 :</h3> 
