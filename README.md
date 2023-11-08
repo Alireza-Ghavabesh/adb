@@ -1,5 +1,6 @@
 
 
+
 <h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 
@@ -9,10 +10,10 @@ Download this two files <br>
 1. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">AdbConnector.zip</a><br>
 2. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">adb-setup-1.4.3.zip</a><br>
 <h3>step 2 :</h3>
-→ extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
-<b>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</b> <br>
+<b>→</b> extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
+<b>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</b> <br><br>
 
-→ extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
+<b>→</b> extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
 <h3>step 3:</h3>
 → <b>Restart PC</b>
 <h3>step 4:</h3>
@@ -28,4 +29,15 @@ Port: 63254 <br>
 
 if you have apps like Nekoray or any app that support socks proxy, you can use <b>127.0.0.1:63255</b> <br>
 
-Enjoy!
+<h1>⚠ Important note: </h1>
+<h3>
+if you want use nekoray Tun mode (VPN mode), you have to do this :<br>
+
+<b>→</b> in Nekoray app go to tab <b>Preferences</b> -> <b>Tun settings</b> -> in <b>Bypass Process Name</b> window,  put this two line and press ok :
+HD-Player.exe
+AdbConnector.exe
+</h3>
+
+
+
+<h1>Enjoy!</h1>
