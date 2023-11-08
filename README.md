@@ -1,7 +1,7 @@
 <h2>⭐Use android VPN for Windows 10!⭐</h2>
 <img src="./adb.png">
 <video width="320" height="240" controls>
-  <source src="AdbConnector.mp4" type="video/mp4">
+  <source src="./AdbConnector.mp4" type="video/mp4">
 </video>
 
 <h1>how to use :</h1><br>
