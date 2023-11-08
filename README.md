@@ -10,7 +10,7 @@ Download this two files <br>
 2. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">adb-setup-1.4.3.zip</a><br>
 <h3>step 2 :</h3>
 → extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
-C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp<br>
+<b>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</b> <br>
 
 → extract  <b>adb-setup-1.4.3.zip</b>  and install <b>adb-setup-1.4.3.exe</b>
 <h3>step 3:</h3>
