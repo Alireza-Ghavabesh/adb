@@ -30,13 +30,13 @@ Port: 63254 <br>
 if you have apps like Nekoray or any app that support socks proxy, you can use <b>127.0.0.1:63255</b> <br>
 
 <h1>⚠ Important note: </h1>
-<h3>
+
 if you want use nekoray Tun mode (VPN mode), you have to do this :<br>
 
 <b>→</b> in Nekoray app go to tab <b>Preferences</b> -> <b>Tun settings</b> -> in <b>Bypass Process Name</b> window,  put this two line and press ok :
 HD-Player.exe
 AdbConnector.exe
-</h3>
+
 
 
 
