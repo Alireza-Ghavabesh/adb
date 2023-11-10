@@ -16,7 +16,7 @@ Download this two files <br>
 <b>→</b> extract <b>adb-setup-1.4.3.zip</b> and install <b>adb-setup-1.4.3.exe</b>
 
 <h3>step 3:</h3>
-→ <b>Restart PC</b>
+→ <b>Restart PC</b> 
 <h3>step 4:</h3>
 → install <b>EveryProxy android app</b> into <b>bluestack</b><br>
 → in everyproxy go to settings and change <b>IP Address</b> to 0.0.0.0 <br>
