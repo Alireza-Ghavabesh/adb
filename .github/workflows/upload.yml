@@ -1,8 +1,6 @@
 name: Upload Release Asset
 on:
   push:
-    tags:
-      - "*"
     branches: main
 jobs:
   build:
@@ -19,7 +17,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          release_name: Release ${{ github.event.release.tag_name }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
