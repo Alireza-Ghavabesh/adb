@@ -11,13 +11,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: release-it
         uses: TheRealWaldo/release-it@v0.7.2
+
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           release-it
+
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         with:
