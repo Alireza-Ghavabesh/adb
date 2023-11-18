@@ -8,7 +8,7 @@ def cmd(command: str):
 
 while True:
     try:
-        print(" =========================================")
+        print("=========================================")
         print(
             "-> trying to connect to localhost:5555")
         resultConnectLocalhost = cmd("adb connect localhost:5555")
