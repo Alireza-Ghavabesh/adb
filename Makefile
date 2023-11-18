@@ -15,3 +15,9 @@ build:
 
 push:
 	git add . && git commit -m "try again" && git push origin main
+
+push-for-publish:
+	git add . && git commit -m "publish" && git push origin main
+
+publish:
+	make build && make push-for-publish
