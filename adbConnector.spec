@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['noarchive', 'server.py'],
+    ['server.py'],
     pathex=[],
     binaries=[],
     datas=[],
