@@ -20,7 +20,7 @@ jobs:
           release_name: AdbConnector
           draft: false
           prerelease: false
-      - name: Upload Release Asset
+      - name: Upload Release Asset (adbConnector.zip)
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,4 +28,13 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./adbConnector.zip
           asset_name: adbConnector.zip
+          asset_content_type: application/zip
+      - name: Upload Release Asset (adb-setup-1.4.3.zip)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./adb-setup-1.4.3.zip
+          asset_name: adb-setup-1.4.3.zip
           asset_content_type: application/zip

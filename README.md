@@ -7,7 +7,7 @@ usage
 <h1>how to use :</h1><br>
 <h3>step 1 :</h3> 
 Download this two files <br>
-1. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">AdbConnector.zip</a><br>
+1. <a href="https://github.com/Alireza-Ghavabesh/adb/releases/download/v1.1.0/adbConnector.zip">AdbConnector.zip</a><br>
 2. <a href="https://github.com/Alireza-Ghavabesh/adb/files/13185843/AdbConnector.zip">adb-setup-1.4.3.zip</a><br>
 <h3>step 2 :</h3>
 <b>→</b> extract <b> AdbConnector.zip</b>  and copy <b>AdbConnector.exe</b> to this path:<br>
