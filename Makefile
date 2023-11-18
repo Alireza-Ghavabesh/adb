@@ -12,3 +12,6 @@ zip-adb:
 build:
 	make reset && pyinstaller --noconfirm --onedir --console --name "adbConnector" --hide-console "hide-early"  "C:/programs/adb/server.py" && make zip-adb && make clean
 
+
+push:
+	git add . && git commit -m "try again" && git push origin main
