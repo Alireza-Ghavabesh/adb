@@ -2,6 +2,7 @@
 output/
 .vscode/
 build/
+dist/
 
 *.spec
 *.zip
