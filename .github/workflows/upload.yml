@@ -1,6 +1,7 @@
 name: Upload Release Asset
 on:
   push:
+    tags: v1.0.0
     branches: main
 jobs:
   build:
