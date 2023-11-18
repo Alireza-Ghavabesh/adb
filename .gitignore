@@ -2,3 +2,4 @@
 output/
 .vscode/
 build/
+.github/workflows/
