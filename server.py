@@ -21,7 +21,7 @@ while True:
         while True:
             try:
                 devices = cmd("adb devices")
-                if b'localhost:5555' in devices:
+                if (b'localhost:5555' in devices) or (b'emulator-5554' in devices):
                     if itsFirstTimeConnect:
                         while True:
                             try:
