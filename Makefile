@@ -7,10 +7,10 @@ clean:
 	rm -rf ./build && rm -rf adbConnector.spec
 
 zip-adb:
-	zip -j adbConnector.zip C:/programs/adb/dist/adbConnector/adbConnector.exe
+	zip -j adbConnector.zip C:/programs/adb/dist/adbConnector.exe
 
 build:
-	make reset && pyinstaller --noconfirm --onedir --console --name "adbConnector" --hide-console "hide-early"  "C:/programs/adb/server.py" && make zip-adb && make clean
+	make reset && pyinstaller --noconfirm --onefile --console --name "adbConnector" --hide-console "hide-early"  "C:/programs/adb/server.py" && make zip-adb && make clean
 
 push:
 	git add . && git commit -m "try again" && git push origin main
