@@ -5,6 +5,7 @@ from time import sleep
 def cmd(command: str):
     return subprocess.check_output(command.split(" "))
 
+# pyinstaller --noconfirm --onedir --console --name "adbConnector" --hide-console "hide-early"  "C:/programs/adb/server.py"
 
 while True:
     try:
