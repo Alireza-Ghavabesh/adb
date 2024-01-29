@@ -16,7 +16,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.9.0
+          tag_name: v1.9.1
           release_name: AdbConnector
           draft: false
           prerelease: false
