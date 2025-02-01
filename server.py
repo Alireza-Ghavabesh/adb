@@ -10,8 +10,15 @@ import requests
 
 
 def cmd(command: str):
-    return subprocess.check_output(command.split(" "))
-
+    while True:
+        try:
+            # Set the timeout to 180 seconds (3 minutes)
+            return subprocess.check_output(command.split(), timeout=10)
+        except subprocess.TimeoutExpired:
+            print("Command timed out after 3 minutes.")
+            break
+        except subprocess.CalledProcessError:
+            sleep(1)
 
 def is_http_connection(proxy_ip, proxy_port):
     url = f'http://{proxy_ip}:{proxy_port}'
@@ -69,8 +76,14 @@ def main():
                             if is_http_connection("localhost", 63254):
                                 sleep(1)
                             else:
+                                print(
+                                        "-> tring to kill adb server...")
                                 cmd("adb kill-server")
+                                print("[+] server killed")
+                                print(
+                                        "-> tring to start adb server...")
                                 cmd("adb start-server")
+                                print("[+] adb server started.")
                                 break
 
                     else:
