@@ -1,0 +1,8 @@
+# ignore output folder
+output/
+.vscode/
+build/
+dist/
+
+*.spec
+# *.zip

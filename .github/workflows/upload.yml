@@ -1,0 +1,40 @@
+name: Upload Release Asset
+on:
+  push:
+    branches: main
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v1.9.5
+          release_name: AdbConnector
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset (adbConnector.zip)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./adbConnector.zip
+          asset_name: adbConnector.zip
+          asset_content_type: application/zip
+      - name: Upload Release Asset (adb-setup-1.4.3.zip)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./adb-setup-1.4.3.zip
+          asset_name: adb-setup-1.4.3.zip
+          asset_content_type: application/zip
