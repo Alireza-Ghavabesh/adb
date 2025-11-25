@@ -33,7 +33,7 @@ jobs:
       # 4. Zip the EXE
       - name: Zip the Build
         run: |
-          Compress-Archive -Path dist/adbConnector.exe -DestinationPath adbConnector.zip
+          Compress-Archive -Path dist/adbConnector.exe -DestinationPath adbConnector.zip -Force
 
       # 5. Create the Release
       - name: Create Release
