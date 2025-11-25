@@ -1,26 +1,54 @@
-name: Upload Release Asset
+name: Build and Release
+
 on:
   push:
-    branches: main
+    branches: [ "main" ]
+
 jobs:
-  build:
-    name: Upload Release Asset
-    runs-on: ubuntu-latest
+  build-release:
+    name: Build and Release
+    runs-on: windows-latest # We need Windows to build a .exe
+
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # 1. Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # 2. Install Dependencies (Colorama & PyInstaller)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install colorama pyinstaller
+
+      # 3. Build the EXE (The Cloud does this now!)
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --noconfirm --onefile --console --name "adbConnector" --hidden-import=colorama server.py
+
+      # 4. Zip the EXE
+      - name: Zip the Build
+        run: |
+          Compress-Archive -Path dist/adbConnector.exe -DestinationPath adbConnector.zip
+
+      # 5. Create the Release
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v1.9.6
-          release_name: AdbConnector
+          tag_name: v${{ github.run_number }} # Auto-increments version (v1, v2, v3...)
+          release_name: Release v${{ github.run_number }}
           draft: false
           prerelease: false
-      - name: Upload Release Asset (adbConnector.zip)
+
+      # 6. Upload the Zip to the Release
+      - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -28,13 +56,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./adbConnector.zip
           asset_name: adbConnector.zip
-          asset_content_type: application/zip
-      - name: Upload Release Asset (adb-setup-1.4.3.zip)
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./adb-setup-1.4.3.zip
-          asset_name: adb-setup-1.4.3.zip
           asset_content_type: application/zip

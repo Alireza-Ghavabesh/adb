@@ -1,28 +1,19 @@
 .PHONY: build
 
-
+# Cleans up local folders
 reset:
-	rm -rf ./dist && rm -rf ./build && rm -rf adbConnector.zip
+	rm -rf ./dist && rm -rf ./build && rm -rf adbConnector.zip && rm -rf adbConnector.spec
 
-clean:
-	rm -rf ./build && rm -rf adbConnector.spec
-
+# Zips locally (only for your own testing)
 zip-adb:
-	zip -j adbConnector.zip E:/vscode_workspace/adb/dist/adbConnector.exe
+	zip -j adbConnector.zip ./dist/adbConnector.exe
 
-# build:
-# make reset && pyinstaller --noconfirm --onefile --console --name "adbConnector" --hide-console "hide-early"  "E:/vscode_workspace/adb/server.py" && make zip-adb && make clean
-
+# Builds locally (only for your own testing)
 build:
-	pyinstaller --noconfirm --onefile --console --name "adbConnector" "E:/vscode_workspace/adb/server.py" && make zip-adb && make clean
+	pyinstaller --noconfirm --onefile --console --name "adbConnector" --hidden-import=colorama "./server.py" && make zip-adb
 
-
-push:
-	git add . && git commit -m "try again" && git push origin main
-
-push-for-publish:
-	git add . && git commit -m "publish" && git push origin main
-
+# Pushes CODE only. GitHub will see the code, build it, and create the release.
 publish:
-	make build && make push-for-publish
-
+	git add .
+	git commit -m "New Release Update"
+	git push origin main

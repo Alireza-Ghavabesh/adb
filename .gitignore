@@ -1,8 +1,15 @@
 # ignore output folder
 output/
 .vscode/
-build/
-dist/
 
 *.spec
 # *.zip
+
+# Ignore build artifacts
+build/
+dist/
+*.spec
+
+# Ignore the binaries and zips
+*.exe
+*.zip
