@@ -138,6 +138,45 @@ def draw_ready_box():
     print(Fore.GREEN + Style.BRIGHT + ascii_art + Style.RESET_ALL)
     print() # Extra spacing
 
+def draw_status_update(message, status_color):
+    """
+    Draws a full-screen, highly visible status message by clearing the screen.
+    Used for LOADING and ERROR states to provide a big visual update.
+    """
+    # Clear the entire terminal screen
+    print('\033[H\033[J', end='', flush=True) 
+    
+    # Define a simple, thick border block
+    block_width = 80
+    
+    # Top Border
+    print(status_color + Style.BRIGHT + "=" * block_width)
+    print(status_color + Style.BRIGHT + "|" + " " * (block_width - 2) + "|")
+    print(status_color + Style.BRIGHT + "|" + " " * (block_width - 2) + "|")
+    
+    # Center and print the message
+    # Subtract 4 for the outer pipes and two spaces of inner padding
+    max_message_width = block_width - 4
+    
+    # Split the message if it's too long
+    if len(message) > max_message_width:
+        # Simple truncation if message is too long
+        display_message = message[:max_message_width - 3] + "..."
+    else:
+        display_message = message
+
+    # Calculate padding for centering
+    padding_len = (max_message_width - len(display_message)) // 2
+    padded_message = " " * padding_len + display_message + " " * (max_message_width - padding_len - len(display_message))
+    
+    print(status_color + Style.BRIGHT + "|  " + padded_message + "  |")
+
+    # Bottom Border
+    print(status_color + Style.BRIGHT + "|" + " " * (block_width - 2) + "|")
+    print(status_color + Style.BRIGHT + "|" + " " * (block_width - 2) + "|")
+    print(status_color + Style.BRIGHT + "=" * block_width + Style.RESET_ALL)
+    print("\n" * 10) # Add lots of space below
+
 async def animation_loop():
     """
     Handles ALL visual output in EASY_MODE.
@@ -152,27 +191,25 @@ async def animation_loop():
 
         # 1. LOADING STATE (e.g., deep recovery)
         if APP_STATE == "LOADING":
-            frame = SPINNER_FRAMES[spinner_idx % len(SPINNER_FRAMES)]
-            line = f"{Fore.CYAN}{frame} {Fore.WHITE}{STATUS_TEXT}"
-            # Use \r to return to the start of the line and overwrite previous status
-            print(f"\r{' '*100}\r{line}", end="", flush=True)
             spinner_idx += 1
-            await asyncio.sleep(0.1) 
+            spinner_char = SPINNER_FRAMES[spinner_idx % len(SPINNER_FRAMES)]
+            # Use large status update
+            draw_status_update(f"{spinner_char} {STATUS_TEXT}", Fore.CYAN)
+            await asyncio.sleep(0.2) 
 
         # 2. READY STATE
         elif APP_STATE == "READY":
             pulse = PULSE_FRAMES[pulse_idx % len(PULSE_FRAMES)]
             line = f"{Fore.GREEN}[ {pulse} {Fore.GREEN}] {Fore.WHITE}Monitoring Proxy Connection {Fore.GREEN}:: {Fore.WHITE}{PROXY_PORT_HTTP} {Fore.GREEN}:: {Fore.WHITE}Active"
-            # Use \r to return to the start of the line and overwrite previous status
+            # Keep this compact line using \r for continuous monitoring to avoid flicker
             print(f"\r{' '*100}\r{line}", end="", flush=True)
             pulse_idx += 1
             await asyncio.sleep(0.25) 
 
         # 3. ERROR STATE (transient failure before deep recovery)
         elif APP_STATE == "ERROR":
-            line = f"{Fore.RED}🚨 CONNECTION LOST {Fore.WHITE}| {STATUS_TEXT}"
-            # Use \r to return to the start of the line and overwrite previous status
-            print(f"\r{' '*100}\r{line}", end="", flush=True)
+            # Use large status update
+            draw_status_update(f"🚨 CONNECTION LOST | {STATUS_TEXT}", Fore.RED)
             await asyncio.sleep(0.5) 
         
         else:
@@ -224,10 +261,6 @@ async def logic_loop():
             failure_count += 1
             
             # Clear the ready_box_drawn flag so the banner shows on successful recovery
-            if ready_box_drawn:
-                # Optional: Clear the console immediately upon first failure for a clean transition
-                print('\033[H\033[J', end='', flush=True)
-                
             ready_box_drawn = False 
             
             if failure_count == 1:
