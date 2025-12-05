@@ -3,8 +3,6 @@ output/
 .vscode/
 
 *.spec
-# *.zip
-
 # Ignore build artifacts
 build/
 dist/
@@ -12,4 +10,3 @@ dist/
 
 # Ignore the binaries and zips
 *.exe
-*.zip
