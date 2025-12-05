@@ -8,7 +8,7 @@ This project allows you to route your Windows internet traffic through an Androi
 
 ## Features
 
-- **Easy to Use**: A simple `AdbConnector.exe` watchdog handles the connection automatically.
+- **Easy to Use**: A simple `emuVPN.exe` watchdog handles the connection automatically.
 - **Stable Connection**: The script continuously monitors the ADB connection and proxy health, resetting it if it fails.
 - **System-Wide VPN**: Route any Windows application's traffic through the proxy.
 - **Compatible**: Works with popular Android emulators like **Mumu Player** and **Bluestacks**.
@@ -20,7 +20,7 @@ This project allows you to route your Windows internet traffic through an Androi
 The process involves three main components:
 1.  **An Android Emulator**: A virtual Android device running on your PC. We recommend **Mumu Player**.
 2.  **EveryProxy App**: An Android app that starts HTTP & SOCKS proxy servers on the emulator.
-3.  **AdbConnector**: A script that runs on your PC to forward the emulator's proxy ports to `localhost`, making the connection accessible to Windows.
+3.  **emuVPN**: A script that runs on your PC to forward the emulator's proxy ports to `localhost`, making the connection accessible to Windows.
 
 <img src="adbC.gif" alt="adbC">
 
@@ -54,12 +54,12 @@ The process involves three main components:
 
     <img src="step4.gif" alt="EveryProxy Settings" style="width:700px;height:400px;">
 
-### Step 3: Set Up AdbConnector
+### Step 3: Set Up emuVPN
 
-1.  **Download and Place `AdbConnector.exe`:**
-    - Download `AdbConnector.zip` from the latest release.
-    - [**Download AdbConnector.zip**](https://github.com/Alireza-Ghavabesh/adb/releases/download/v1.9.5/adbConnector.zip)
-    - Extract the zip file and copy `AdbConnector.exe` to the Windows startup folder. This ensures it runs automatically every time you log in.
+1.  **Download and Place `emuVPN.exe`:**
+    - Download `emuVPN.zip` from the latest release.
+    - [**Download emuVPN.zip**](https://github.com/Alireza-Ghavabesh/adb/releases/download/v1.9.5/emuVPN.zip)
+    - Extract the zip file and copy `emuVPN.exe` to the Windows startup folder. This ensures it runs automatically every time you log in.
     - **Startup Path:** `C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`
 
 2.  **Restart Your PC:**
@@ -98,7 +98,7 @@ If you plan to use Nekoray's TUN mode (a system-wide VPN mode), you must prevent
 - In the **Bypass Process Name** window, add the following two lines:
   ```
   HD-Player.exe
-  AdbConnector.exe
+  emuVPN.exe
   ```
 - This will prevent a connection loop between Windows and the emulator.
 

@@ -28,12 +28,12 @@ jobs:
       # 3. Build the EXE (The Cloud does this now!)
       - name: Build with PyInstaller
         run: |
-          pyinstaller --noconfirm --onefile --console --name "adbConnector" --hidden-import=colorama server.py
+          pyinstaller --noconfirm --onefile --console --name "emuVPN" --hidden-import=colorama server.py
 
       # 4. Zip the EXE
       - name: Zip the Build
         run: |
-          Compress-Archive -Path dist/adbConnector.exe -DestinationPath adbConnector.zip -Force
+          Compress-Archive -Path dist/emuVPN.exe -DestinationPath emuVPN.zip -Force
 
       # 5. Create the Release
       - name: Create Release
@@ -54,6 +54,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./adbConnector.zip
-          asset_name: adbConnector.zip
+          asset_path: ./emuVPN.zip
+          asset_name: emuVPN.zip
           asset_content_type: application/zip

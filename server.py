@@ -13,7 +13,7 @@ PROXY_IP = "localhost"
 PROXY_PORT_HTTP = 63254
 PROXY_PORT_SOCKS = 63255
 FAILURE_THRESHOLD = 3
-EASY_MODE = "ON" 
+EASY_MODE = "OFF" 
 
 # --- Global Animation State ---
 # Start in LOADING to prevent freeze
