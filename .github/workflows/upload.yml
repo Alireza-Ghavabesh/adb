@@ -48,7 +48,7 @@ jobs:
           prerelease: false
 
       # 6. Upload the Zip to the Release
-      - name: Upload Release Asset
+      - name: Upload emuVPN.zip Release Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -56,4 +56,24 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./emuVPN.zip
           asset_name: emuVPN.zip
+          asset_content_type: application/zip
+      
+      - name: Upload adb.zip Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./adb.zip
+          asset_name: adb.zip
+          asset_content_type: application/zip
+      
+      - name: Upload adb-setup-1.4.3.zip Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./adb-setup-1.4.3.zip
+          asset_name: adb-setup-1.4.3.zip
           asset_content_type: application/zip
